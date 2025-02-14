@@ -1,6 +1,6 @@
 <template>
   <div class="interviewer-dashboard">
-    <!-- Content will go here -->
+
   </div>
 </template>
 

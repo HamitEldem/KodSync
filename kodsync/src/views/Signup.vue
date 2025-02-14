@@ -1,6 +1,6 @@
 <template>
   <div class="signup">
-    <!-- Content will go here -->
+
   </div>
 </template>
 

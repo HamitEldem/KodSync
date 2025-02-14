@@ -1,5 +1,5 @@
 <script setup>
-// No need for HelloWorld import anymore
+
 </script>
 
 <template>
