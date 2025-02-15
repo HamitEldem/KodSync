@@ -10,7 +10,9 @@
     </div>
     <div class="header">
       <div class="name">
-        <h2>KodSync</h2>
+        <router-link to="/" class="home">
+          <h2>KodSync</h2>  
+        </router-link>
       </div>
 
     </div>
@@ -32,10 +34,16 @@
         <input type="password" name="passwd" id="passwd">
         <div id="login-btn">
           <button>
-            <span>
-              Log in
-            </span>
+
+            Log in
+
           </button>
+        </div>
+        <div class="foot-links">
+          <router-link to="/forgot-password" class="forgot-password">Forgot Your Password?</router-link>
+        </div>
+        <div class="foot-links">
+          <router-link to="/signup" class="signup">Don't have an account?</router-link>
         </div>
       </div>
 
@@ -135,26 +143,52 @@ h3 {
 }
 
 #login-btn {
-  padding: 0.1rem 11rem;
-  margin: 1.5rem auto;
-  width: 25%;
+  padding: 0.5rem 50%;
+  margin: 1.8rem auto;
+  width: 50%;
   background-color: #14B859;
   border-radius: 12px;
   color: black;
-
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 button {
-  background-color: #14B859;
+  background-color: inherit;
   border: none;
   color: black;
-  font-size: 13px;
-  width: 25%;
+  font-size: 15px;
 
-
+  white-space: nowrap;
 }
 
+#login-btn:hover{
+  color: black;
+  cursor: pointer;
+  background-color: #12a24e;
+}
 
+.foot-links {
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  color: gray;
+  text-decoration: none;
+}
+
+.foot-links a {
+  color: gray;
+  text-decoration: none;
+}
+
+a h2{
+  color: white;
+  text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}
 
 /* Mobile warning */
 .mobile-warning {

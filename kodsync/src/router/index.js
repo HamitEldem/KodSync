@@ -5,6 +5,7 @@ import Signup from '../views/Signup.vue';
 import CandidateOtp from '../views/CandidateOtp.vue';
 import CodingEnvironment from '../views/CodingEnvironment.vue';
 import InterviewerDashboard from '../views/InterviewerDashboard.vue';
+import ForgotPassword from '../views/ForgotPassword.vue';
 
 const routes = [
   { path: '/', component: Home },
@@ -13,6 +14,7 @@ const routes = [
   { path: '/candidate-otp', component: CandidateOtp },
   { path: '/coding', component: CodingEnvironment },
   { path: '/dashboard', component: InterviewerDashboard },
+  { path: '/forgot-password', component: ForgotPassword }
 ];
 
 const router = createRouter({
