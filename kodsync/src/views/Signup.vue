@@ -232,14 +232,6 @@ a{
 
 /* Desktop Responsiveness */
 @media screen and (min-width: 769px) and (max-width: 1200px) {
-  #slogan {
-    font-size: 1.2rem;
-  }
-
-  #main-img {
-    width: 45%;
-    height: 350px;
-  }
 
   .otp-btn {
     font-size: 20px;
@@ -255,15 +247,7 @@ a{
     gap: 1rem;
   }
 
-  #main-img {
-    width: 70%;
-    height: 280px;
-  }
-
-  #slogan {
-    width: 100%;
-  }
-
+ 
   .bottom-content {
     flex-direction: column;
     text-align: center;
