@@ -19,13 +19,22 @@
     </div>
     <div class="content">
         <h1>Log in to KodSync</h1>
-        <div id="email">
+        <div class="user-input">
           <h3>
             Email
           </h3>
           <input type="text" name="e-mail" id="e-mail" placeholder="jane_doe@example.com">
-
         </div>
+        <div class="user-input">
+          <h3>
+            Password
+          </h3>
+          <input type="password" name="passwd" id="passwd" >
+          <div id="login-btn">
+            <button>Log in</button>
+          </div>
+        </div>
+
     </div>
  
   </div>
@@ -76,7 +85,7 @@
         border: 1px solid white;
         width: 97%;
         margin: 0 auto;
-        margin-top: 1rem;
+        margin-top: 0.1rem;
         position: relative;
     }
 
@@ -101,7 +110,7 @@
       margin-left: 0.2rem;
     }
    
-    #email{
+    .user-input{
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
@@ -109,13 +118,16 @@
       margin-top: 0.2rem;
       width: 25%;
       text-align: left;
+      margin-bottom: 1.2rem;
     }
 
-    #email input{
+    .user-input input{
       padding: 0.8rem;
       border: 1px solid #656565;
       border-radius: 12px;
       background-color: #3D5445;
+      color: white;
+
     }
 
    
