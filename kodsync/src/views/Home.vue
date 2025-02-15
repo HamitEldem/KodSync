@@ -45,7 +45,7 @@
             
         </div>
         <div class="otp-btn">
-            <router-link to="/CandidateOtp" class="candidate-otp">Join an interview as candidate</router-link>
+            <router-link to="/candidate-otp" class="candidate-otp">Join an interview as candidate</router-link>
         </div>
         <div>
 
@@ -184,6 +184,11 @@
     }
 
     .candidate-otp {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .otp-btn a{
         text-decoration: none;
         color: #000;
     }
