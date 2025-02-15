@@ -92,6 +92,7 @@
     .name{
         margin: 0;
         font-size: 1.5rem;
+        padding-top: 15px;
     }
     .login-signup{
         display: flex;
