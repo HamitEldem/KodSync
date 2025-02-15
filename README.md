@@ -5,9 +5,9 @@ KodSync is a web-based platform designed to streamline the technical interview p
 ## 🚧 Current Development Status
 
 The project is currently in early development. Completed features:
-- Responsive homepage with mobile warning
+- Responsive frontend pages with mobile warning
 - Basic routing structure
-- Landing page design and layout
+- Page design and layout
 
 ## 🛠️ Technologies Used
 
