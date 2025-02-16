@@ -6,6 +6,45 @@ const selectedOption = ref('Dashboard');
 const selectOption = (option) => {
   selectedOption.value = option;
 };
+
+const userList = ref([
+  {
+    name: "Serkan Genc",
+    age: 25,
+    datetime: "2024-01-01T12:00:00"
+  },
+  {
+    name: "Ali Firat",
+    age: 24,
+    datetime: "2024-01-02T09:30:00"
+  },
+  {
+    name: "Erkan Ucar",
+    age: 26,
+    datetime: "2024-01-03T15:45:00"
+  },
+  {
+    name: "Serpil Tin",
+    age: 27,
+    datetime: "2025-05-01T11:20:00"
+  },
+  {
+    name: "Engin Kirac",
+    age: 28,
+    datetime: "2025-05-02T14:10:00"
+  },
+  {
+    name: "Hatice Yilmaz",
+    age: 29,
+    datetime: "2025-05-03T16:30:00"
+  }
+]);
+
+function isUpcoming(date) {
+  const now = new Date();
+  const interviewDate = new Date(date);
+  return now < interviewDate;
+}
 </script>
 
 <template>
@@ -14,29 +53,44 @@ const selectOption = (option) => {
       <h2>Please switch to desktop for the best experience</h2>
       <p>KodSync is optimized for desktop viewing</p>
     </div>
-    <div id="left-bar">
-      <div @click="selectOption('Dashboard')" :class="{ active: selectedOption === 'Dashboard' }">
-        <p>Dashboard</p>
+    <div class="content">
+      <div id="left-bar">
+        <div @click="selectOption('Dashboard')" :class="{ active: selectedOption === 'Dashboard' }">
+          <p>Dashboard</p>
+        </div>
+        <div @click="selectOption('Sessions')" :class="{ active: selectedOption === 'Sessions' }">
+          <p>Sessions</p>
+        </div>
+        <div @click="selectOption('Settings')" :class="{ active: selectedOption === 'Settings' }">
+          <p>Settings</p>
+        </div>
+        <div id="new-session">
+          <p><span>+</span>New Session</p>
+        </div>
       </div>
-      <div @click="selectOption('Sessions')" :class="{ active: selectedOption === 'Sessions' }">
-        <p>Sessions</p>
-      </div>
-      <div @click="selectOption('Settings')" :class="{ active: selectedOption === 'Settings' }">
-        <p>Settings</p>
-      </div>
-      <div id="new-session">
-        <p><span>+</span>New Session</p>
-      </div>
-    </div>
-    <div id="right-side">
-      <div v-if="selectedOption === 'Dashboard'">
-        <!-- Add your Dashboard content here -->
-      </div>
-      <div v-if="selectedOption === 'Sessions'">
-        <!-- Add your Sessions content here -->
-      </div>
-      <div v-if="selectedOption === 'Settings'">
-        <!-- Add your Settings content here -->
+      <div id="right-side">
+        <div v-if="selectedOption === 'Dashboard'">
+          <h1>Dashboard</h1>
+          <p>Upcoming</p>
+          <div class="sessionList" v-for="user in userList" v-if="userList.some(user => isUpcoming(user.datetime))">
+            <span v-if="isUpcoming(user.datetime)">Interview with {{ user.name }}</span>
+            <h4  class="dtime" v-if="isUpcoming(user.datetime)">Completed at {{ user.datetime }}</h4>
+          </div>
+          <h4 v-else>No upcoming interviews </h4>
+          <p>Past</p>
+          <div class="sessionList" v-for="user in userList" v-if="userList.some(user => !isUpcoming(user.datetime))">
+            <span v-if="!isUpcoming(user.datetime)">Interview with {{ user.name }}</span>
+            <h4  class="dtime" v-if="!isUpcoming(user.datetime)">Completed at {{ user.datetime }}</h4>
+          </div>
+          <h4 v-else>No past interviews </h4>
+        </div>
+        <div v-if="selectedOption === 'Sessions'">
+          <!-- Add your Sessions content here -->
+
+        </div>
+        <div v-if="selectedOption === 'Settings'">
+          <!-- Add your Settings content here -->
+        </div>
       </div>
     </div>
   </div>
@@ -57,6 +111,24 @@ const selectOption = (option) => {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+#right-side{
+  margin-top: 1.5rem;
+  margin-left: 3rem;
+}
+
+.content {
+  color: white;
+  display: flex;
+  gap: 0.5rem;
+}
+
+h4{
+  font-weight: 450;
+  color: #515151;
+  margin-top: 0.5rem;
+
+}
+
 #left-bar {
   width: 20%;
   color: white;
@@ -72,8 +144,17 @@ const selectOption = (option) => {
 
 #left-bar div {
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.8rem;
   border-radius: 12px;
+}
+
+
+template .sessionList span{
+  font-size: 0.8rem;
+}
+
+.sessionList{
+  margin-top: 1.5rem;
 }
 
 #new-session {
@@ -87,6 +168,13 @@ const selectOption = (option) => {
   left: 1rem;
   width: 18%;
   margin-left: 2%;
+}
+
+#right-side p {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+
 }
 
 #new-session:hover {
