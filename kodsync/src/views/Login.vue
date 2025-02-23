@@ -6,7 +6,7 @@
   <div class="login">
     <div class="mobile-warning">
       <h2>Please switch to desktop for the best experience</h2>
-      <p>KodSync is optimized for desktop viewing</p>
+      <p>KodSync is optimized foor desktop viewing</p>
     </div>
     <div class="header">
       <div class="name">
